@@ -5,6 +5,13 @@
    login_password: ExpenseApp@1
    host: daws81s.store
   tasks:
+
+  - name: install python dependencies
+    ansible.builtin.pip:
+     name: 
+     - PyMySQL
+     executable: pip3.9
+
   - name: install mysql server
     ansible.builtin.package:
      name: mysql-server
