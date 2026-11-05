@@ -3,7 +3,7 @@
   become: yes
   vars:
    login_password: ExpenseApp@1
-   host: daws81s.store
+   login_host: mysql.daws81s.store
   tasks:
 
   - name: install python dependencies
@@ -27,7 +27,8 @@
     community.mysql.mysql_info:
      login_user: root
      login_password: "{{ login_password }}"
-     login_host: "{{ host }}"
+     login_host: "{{ login_host }}"
+     ignore_errors: true
     register: mysql_info
 
   - name: print the output
