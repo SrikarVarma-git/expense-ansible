@@ -5,6 +5,11 @@
    login_password: ExpenseApp@1
    login_host: mysql.daws81s.store
   tasks:
+  - name: install python dependencies
+    ansible.builtin.pip:
+     name: 
+     - PyMySQL
+     executable: pip3.9
   - name: disbale nodejs
     ansible.builtin.command: dnf module disable nodejs -y
 
